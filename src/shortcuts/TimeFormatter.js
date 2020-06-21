@@ -33,6 +33,14 @@ TimeFormatter.prototype = {
 
     getTimeFormatOptions: function () {
         var owner = this;
+        if (String(owner.timeFormat) === '99') {
+            return {
+                maxHourFirstDigit: 9,
+                maxHours: 99,
+                maxMinutesFirstDigit: 5,
+                maxMinutes: 60
+            };
+        }
         if (String(owner.timeFormat) === '12') {
             return {
                 maxHourFirstDigit: 1,
